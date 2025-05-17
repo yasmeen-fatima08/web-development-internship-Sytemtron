@@ -1,0 +1,234 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg,#b92424,#1461cb); /* Subtle background gradient */
+    margin: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.calculator {
+    background: #08749b;
+    border-radius: 20px; /* More pronounced rounded corners */
+    box-shadow: 0 3px 15px rgb(255, 255, 255); /* Deeper, softer shadow */
+    padding: 30px; /* Slightly more padding */
+    width: 340px; /* Adjust width slightly */
+}
+
+.display {
+    margin-bottom: 30px; /* More margin below display */
+    background-color: #b1b8ba; /* Light background for display */
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.display input {
+    width: 100%;
+    padding: 24px; /* Remove input padding, all padding is in the display container */
+    font-size: 32px; /* Slightly larger, bolder font */
+    text-align: right;
+    border: none; /* Remove input border */
+    outline: none; /* Remove focus outline */
+    box-sizing: border-box;
+    background-color: transparent; /* Make input background transparent */
+    color: #000000;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px; /* Increased gap between buttons */
+    
+}
+
+.buttons button {
+    padding: 20px; /* More padding inside buttons */
+    font-size: 22px; /* Slightly larger font */
+    border: none;
+    border-radius: 20px; /* More rounded buttons */
+    cursor: pointer;
+    background-color: #ffffff; /* Light grey button background */
+    color: #002272;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1); /* Subtle button shadow */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+    background-color: #d0d5dc;
+    transform: scale(1.03); /* Slight pop on hover */
+    box-shadow: -8px -8px 15px rgba(255, 255, 255);
+}
+
+.buttons .equal {
+    grid-column: span 1;
+    background-color: #fb7c14; /* More vibrant green */
+    color: white;
+     box-shadow: 0 3px 15px rgb(28, 27, 27);
+    
+}
+
+.buttons .equal:hover {
+    background-color: #dc6b0f;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.buttons button:nth-child(1), /* Clear button */
+.buttons button:nth-child(2) { /* Delete button */
+    background-color: #fff3f3c4; /* More vibrant red */
+    color: rgb(255, 0, 0);
+    box-shadow: 2px 2px 5px rgba(7, 7, 7, 0);
+}
+
+.buttons button:nth-child(1):hover,
+.buttons button:nth-child(2):hover {
+    background-color: #c9302c;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.buttons button:nth-child(3), /* Operators */
+.buttons button:nth-child(4),
+.buttons button:nth-child(8),
+.buttons button:nth-child(12),
+ .buttons button:nth-child(16){
+    background-color: #f0ad4e; /* More appealing yellow/orange */
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.buttons button:nth-child(3):hover,
+.buttons button:nth-child(4):hover,
+.buttons button:nth-child(8):hover,
+.buttons button:nth-child(12):hover,
+ .buttons button:nth-child(16):hover{
+    background-color: #eea236;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Styles (Adjusted for consistency) */
+body.dark-mode {
+    background: linear-gradient(135deg, #712e2e, #0e185c);
+    color: #eee;
+}
+
+.calculator.dark-mode {
+    background-color: #242121;
+    box-shadow: 0 10px 30px rgb(163, 161, 168);
+}
+
+.calculator.dark-mode .display {
+    background-color: #393535;
+    border-radius: 12px;
+}
+
+.calculator.dark-mode .display input {
+    color: #eee;
+}
+
+.calculator.dark-mode .buttons button {
+    background-color: #b8b6b6;
+    color: #0d0d0e;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+}
+
+.calculator.dark-mode .buttons button:hover {
+    background-color: #555;
+    transform: scale(1.03);
+    box-shadow: -8px -8px 15px rgb(255, 255, 255);
+}
+
+.calculator.dark-mode .buttons .equal {
+    background-color:  #fb7c14;
+    color: white;
+     box-shadow: -8px -8px 15px rgba(203, 203, 194, 0.244);
+}
+
+.calculator.dark-mode .buttons .equal:hover {
+    background-color: #dc6b0f;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.calculator.dark-mode .buttons button:nth-child(1), /* Clear button */
+.calculator.dark-mode .buttons button:nth-child(2)
+ { /* Delete button */
+    background-color: #fff3f3c4;
+    color: rgb(255, 0, 0);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.calculator.dark-mode .buttons button:nth-child(1):hover,
+.calculator.dark-mode .buttons button:nth-child(2):hover {
+    background-color: #c9302c;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.calculator.dark-mode .buttons button:nth-child(3), /* Operators */
+.calculator.dark-mode .buttons button:nth-child(4),
+.calculator.dark-mode .buttons button:nth-child(8),
+.calculator.dark-mode .buttons button:nth-child(12),
+.calculator.dark-mode .buttons button:nth-child(16){
+    background-color: #f0ad4e;
+    color: rgb(255, 255, 255);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.calculator.dark-mode .buttons button:nth-child(3):hover,
+.calculator.dark-mode .buttons button:nth-child(4):hover,
+.calculator.dark-mode .buttons button:nth-child(8):hover,
+.calculator.dark-mode .buttons button:nth-child(12):hover,
+.calculator.dark-mode .buttons button:nth-child(16):hover{
+    background-color: #eea236;;
+    transform: scale(1.03);
+    box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* Theme Toggle Switch (Minor adjustments for dark mode visibility) */
+.toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background-color: #666; /* Darker default for better visibility in light mode */
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-slider::before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: rgb(225, 255, 0);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+input:checked + .theme-slider {
+    background-color: #2196F3;
+}
+
+input:checked + .theme-slider::before {
+    transform: translateX(20px);
+}
